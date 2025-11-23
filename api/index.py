@@ -80,5 +80,3 @@ async def get_music_detail(
         # 返回原始响应的JSON数据
         return response.json()
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
