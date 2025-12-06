@@ -1,11 +1,21 @@
 from fastapi import FastAPI, Query, Path, HTTPException, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 import httpx
 import uvicorn
- 
+
 app = FastAPI(title="音乐资源代理服务器", description="使用FastAPI实现的音乐资源代理转发服务")
+
+# 添加 CORS 中间件 - 允许所有域名访问
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 允许所有来源
+    allow_credentials=True,  # 允许发送凭据（cookies、授权头等）
+    allow_methods=["*"],  # 允许所有HTTP方法
+    allow_headers=["*"],  # 允许所有HTTP头
+)
 
 # 基础URL
 BASE_URL = "https://www.lihouse.xyz/coco_widget/music_resource"
@@ -87,4 +97,16 @@ async def get_music_detail(
         response.raise_for_status()
         # 返回原始响应的JSON数据
         return response.json()
+
+
+# 添加健康检查端点
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "message": "服务运行正常"}
+
+
+# 添加一个 OPTIONS 请求的通用处理（CORS预检请求）
+@app.options("/{full_path:path}")
+async def options_handler(full_path: str):
+    return JSONResponse(content={}, status_code=200)
 
