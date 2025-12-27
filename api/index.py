@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 import httpx
 import uvicorn
+from fastapi.responses import FileResponse
 
 app = FastAPI(title="音乐资源代理服务器", description="使用FastAPI实现的音乐资源代理转发服务")
 
