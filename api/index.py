@@ -35,6 +35,10 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
         status_code=exc.status_code,
         content={"status": False, "msg": exc.detail}
     )
+    
+@app.get("/fdriver", summary="")
+async def FDriver():
+    return FileResponse("./templates/web.html")
 
 
 @app.exception_handler(RequestValidationError)
