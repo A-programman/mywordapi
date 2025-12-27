@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDriver - 专为 Scratch 打造的系统级驱动引擎</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scratch-block {
+            background: #4C97FF;
+            border: 2px solid #3373CC;
+            border-radius: 4px;
+            padding: 8px 12px;
+            color: white;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 0 #3373CC;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans scroll-smooth">
+
+    <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-lg border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter">
+                <span class="text-indigo-600">F</span>DRIVER
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
+                <a href=" " class="hover:text-indigo-600 transition">功能特性</a >
+                <a href="#extension" class="hover:text-indigo-600 transition">专属扩展</a >
+                <a href="#download" class="hover:text-indigo-600 transition">获取工具</a >
+            </div>
+            <a href="#download" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+                立即开始
+            </a >
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-indigo-600 uppercase bg-indigo-50 rounded-full">
+                突破沙箱限制 · 释放创意
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
+                让 Scratch <br><span class="gradient-text">拥有真实的系统权限</span>
+            </h1>
+            <p class="text-xl text-slate-500 mb-10 max-w-3xl mx-auto leading-relaxed">
+                <strong class="text-slate-800">FDriver</strong> 是一款强大的桥接工具。通过 Python 驱动层与配套的 Scratch 扩展积木，让你的编程作品轻松读写本地文件、调用外部 API，甚至控制硬件。
+            </p >
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#download" class="bg-slate-900 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:bg-slate-800 transition">
+                    下载 FDriver 引擎
+                </a >
+                <a href="#extension" class="bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-slate-50 transition">
+                    查看积木扩展
+                </a >
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden relative">
+                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">三位一体的工作流</h2>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <div class="bg-indigo-500/20 text-indigo-400 w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+                                <div><p class="font-semibold">Python 后端 (Server)</p ><p class="text-slate-400 text-sm">在本地静默运行，负责处理高权限系统指令。</p ></div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="bg-indigo-500/20 text-indigo-400 w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+                                <div><p class="font-semibold">FDriver 积木扩展</p ><p class="text-slate-400 text-sm">通过浏览器请求与后端通信，操作简单直观。</p ></div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="bg-indigo-500/20 text-indigo-400 w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+                                <div><p class="font-semibold">本地文件/网络 API</p ><p class="text-slate-400 text-sm">突破浏览器沙箱，实现真正的持久化存储和数据交换。</p ></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-2xl">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="extension" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">像原生积木一样自然</h2>
+            <p class="text-slate-500 mb-16">无需复杂的 URL 拼接，拖入 FDriver 扩展，立即使用</p >
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition text-left">
+                    <div class="scratch-block mb-6">
+                        <span>读取文件 [ C:/save.txt ]</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">文件系统控制</h4>
+                    <p class="text-slate-600">支持读取、写入、追加本地文本或 JSON 文件。制作一个可以永久保存进度的游戏！</p >
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition text-left">
+                    <div class="scratch-block mb-6" style="background: #FF6680; border-color: #FF4D6A; box-shadow: 0 4px 0 #FF4D6A;">
+                        <span>发送 API 请求 [ https://api.weather.com ]</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">网络请求转发</h4>
+                    <p class="text-slate-600">利用 Python 后端转发请求，完美解决浏览器跨域限制，实时获取天气、新闻或 AI 回复。</p >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-indigo-600 to-indigo-800 p-10 rounded-3xl text-white">
+                    <h3 class="text-2xl font-bold mb-4">1. 获取 FDriver 引擎</h3>
+                    <p class="mb-8 opacity-80">这是项目的核心，基于 Python 构建。请下载并保持在后台运行。</p >
+                    <div class="space-y-4">
+                        <a href="#" class="block w-full bg-white text-indigo-900 text-center py-4 rounded-xl font-bold hover:bg-indigo-50 transition">下载 Windows 版 (.exe)</a >
+                        <a href="#" class="block w-full bg-indigo-500/30 text-white border border-indigo-400 text-center py-4 rounded-xl font-bold hover:bg-indigo-500/50 transition">下载 macOS 版 (.app)</a >
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-200">
+                    <h3 class="text-2xl font-bold mb-4">2. 导入积木扩展</h3>
+                    <p class="text-slate-500 mb-8">将此扩展文件导入到你的 Scratch 项目（或通过自定义加载器加载）。</p >
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-dashed border-slate-300 mb-6 flex flex-col items-center">
+                        <span class="text-sm font-mono text-slate-400 mb-2">fdriver_extension.gui</span>
+                        <a href="#" class="text-indigo-600 font-bold hover:underline">点击下载扩展文件</a >
+                    </div>
+                    <p class="text-xs text-slate-400 italic text-center leading-relaxed">
+                        注意：使用扩展前请确保 FDriver 引擎已启动并在端口 8000 监听。
+                    </p >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
+            <p>© 2025 FDriver Project. </p >
+            <div class="flex gap-8 mt-4 md:mt-0 font-medium">
+                <a href="#" class="hover:text-indigo-600">GitHub 源码</a >
+                <a href="#" class="hover:text-indigo-600">使用文档</a >
+                <a href="#" class="hover:text-indigo-600">反馈建议</a >
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
